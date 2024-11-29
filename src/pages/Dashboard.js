@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/token");
+      const response = await axios.get('https://betoram.vercel.app/token');
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
       setUsername(decoded.username);
@@ -40,7 +40,7 @@ const Dashboard = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get("http://localhost:3001/token");
+        const response = await axios.get('https://betoram.vercel.app/token');
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);
@@ -56,7 +56,7 @@ const Dashboard = () => {
   );
 
   const getUsers = async () => {
-    const response = await axiosJWT.get("http://localhost:3001/users", {
+    const response = await axiosJWT.get('https://betoram.vercel.app/users', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
