@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import axios from "axios"
 import App from './App';
+import api from './api/api'; // Menambahkan import untuk api.js
 
 // import dotenv from "dotenv"
 
