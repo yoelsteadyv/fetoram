@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from './api/api.js'
 
 
 const Register = () => {
@@ -15,7 +16,7 @@ const Register = () => {
   const Register = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://betoram.vercel.app/users', {
+      await api.post('https://betoram.vercel.app/users', {
         username,
         ign,
         email,

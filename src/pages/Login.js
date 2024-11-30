@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import api from '../api/api.js'
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -11,7 +12,7 @@ const Login = () => {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://betoram.vercel.app/login', {
+      await api.post('https://betoram.vercel.app/login', {
         identifier,
         password,
       });
